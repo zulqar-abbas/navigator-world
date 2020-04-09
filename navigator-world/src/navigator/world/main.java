@@ -5,6 +5,9 @@
  */
 package navigator.world;
 
+import becker.robots.City;
+import becker.robots.Direction;
+
 
 /**
  *
@@ -18,10 +21,15 @@ public class main {
     
     public static void main(String[] args) {
         // TODO code application logic here
-        Navigator navigator = new Navigator();
-        navigator.implement();
         
-        Climber climber = new Climber();
+        
+        City ny = new City();
+
+        Navigator navigator = new Navigator(ny);
+        navigator.implement();
+
+        City lv = new City();
+        Climber climber = new Climber(lv);
         climber.implement();
         
         

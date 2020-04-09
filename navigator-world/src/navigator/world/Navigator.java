@@ -11,11 +11,14 @@ import becker.robots.*;
  * @author root
  */
 public class Navigator {
-    
-    public void implement(){
-        
+    public City ny;
+    public Robot rb;
+
+    Navigator(City ny)
+    {
+        this.ny = ny;
+        this.rb = new Robot(ny, 0, 2, Direction.WEST);
         // Set up the initial situation
-        City ny = new City();
         Wall blockAve0 = new Wall(ny, 1, 1, Direction.WEST);
         Wall blockAve1 = new Wall(ny, 2, 1, Direction.WEST);
         Wall blockAve2 = new Wall(ny, 1, 1, Direction.NORTH);
@@ -24,43 +27,47 @@ public class Navigator {
         Wall blockAve5 = new Wall(ny, 2, 2, Direction.EAST);
         Wall blockAve6 = new Wall(ny, 2, 1, Direction.SOUTH);
         Wall blockAve7 = new Wall(ny, 2, 2, Direction.SOUTH);
-        Robot navigator = new Robot(ny, 0, 2, Direction.WEST);
+    }
+    
+    public void implement(){
+        
+        //this will create the robot which will navigate through the city
 
         // navigator goes around the walls with the following lines of code
 
         //move the navigator 1 step ahead per move()
-        navigator.move();
-        navigator.move();
+        this.rb.move();
+        this.rb.move();
 
         //turn the navigator 90 degree to the south
-        navigator.turnLeft();
+        this.rb.turnLeft();
 
         //move the navigator 1 step ahead per move()
-        navigator.move();
-        navigator.move();
-        navigator.move();
+        this.rb.move();
+        this.rb.move();
+        this.rb.move();
 
         //turn the navigator 90 degree to the east
-        navigator.turnLeft();
+        this.rb.turnLeft();
 
-        //move the navigator 1 step ahead per move()
-        navigator.move();
-        navigator.move();
-        navigator.move();
+        //move the rb 1 step ahead per move()
+        this.rb.move();
+        this.rb.move();
+        this.rb.move();
 
         //turn the navigator 90 degree to the north
-        navigator.turnLeft();
+        this.rb.turnLeft();
 
         //move the navigator 1 step ahead per move()
-        navigator.move();
-        navigator.move();
-        navigator.move();
+        this.rb.move();
+        this.rb.move();
+        this.rb.move();
 
        //turn the navigator 90 degree to the west
-        navigator.turnLeft();
+        this.rb.turnLeft();
 
         //stop at the starting position per move()
-        navigator.move();    
+        this.rb.move();    
     }
 
 }

@@ -10,14 +10,14 @@ import java.awt.Color;
  *
  * @author root
  */
-public class Climber {
-    public Climber() {
-    }
+public class Climber extends Thing {
+    public City ny;
+    public Robot rb;
     
-        public void implement(){
-        
-        // Set up the initial situation
-        City ny = new City();
+    Climber(City ny) {
+        super(ny, 3,1);
+        this.ny = ny;
+         // Set up the initial situation
         Wall blockAve0 = new Wall(ny, 3, 2, Direction.WEST);
         Wall blockAve1 = new Wall(ny, 3, 2, Direction.NORTH);
         Wall blockAve2 = new Wall(ny, 2, 3, Direction.WEST);
@@ -27,73 +27,75 @@ public class Climber {
         Wall blockAve6 = new Wall(ny, 2, 4, Direction.NORTH);
         Wall blockAve7 = new Wall(ny, 2, 4, Direction.EAST);
         Wall blockAve8 = new Wall(ny, 3, 4, Direction.EAST);
-        Robot navigator = new Robot(ny, 3, 0, Direction.EAST);
-        Thing thing = new Thing(ny,3,1);
+        this.rb = new Robot(ny, 3, 0, Direction.EAST);
+        
+    }
+
+        public void implement(){
+        
         // navigator goes around the walls with the following lines of code
             
         //move the navigator 1 step ahead per move()
-        navigator.move();
+        this.rb.move();
         
         
-        if(navigator.canPickThing()){
-            navigator.pickThing();
+        if(this.rb.canPickThing()){
+            this.rb.pickThing();
         }
 
-        //turn the navigator 90 degree to the south
-        navigator.turnLeft();
+        //turn the rb 90 degree to the south
+        this.rb.turnLeft();
 
         //move the navigator 1 step ahead per move()
-        navigator.move();
+        this.rb.move();
 
         //turn the navigator 90 degree to the east
-        navigator.turnLeft();
-        navigator.turnLeft();
-        navigator.turnLeft();
+        this.rb.turnLeft();
+        this.rb.turnLeft();
+        this.rb.turnLeft();
 
         //move the navigator 1 step ahead per move()
-        navigator.move();
+        this.rb.move();
 
         //turn the navigator 90 degree to the north
-        navigator.turnLeft();
+        this.rb.turnLeft();
 
         //move the navigator 1 step ahead per move()
-        navigator.move();
-        navigator.move();
+        this.rb.move();
+        this.rb.move();
 
        //turn the navigator 90 degree to the west
-        navigator.turnLeft();
-        navigator.turnLeft();
-        navigator.turnLeft();
+        this.rb.turnLeft();
+        this.rb.turnLeft();
+        this.rb.turnLeft();
 
         //stop at the starting position per move()
-        navigator.move();    
+        this.rb.move();    
         
-        navigator.putThing();
+        this.rb.putThing();
         
         //move the navigator 1 step ahead per move()
-        navigator.move();
+        this.rb.move();
         
         //turn the navigator 90 degree to the west
-        navigator.turnLeft();
-        navigator.turnLeft();
-        navigator.turnLeft();
+        this.rb.turnLeft();
+        this.rb.turnLeft();
+        this.rb.turnLeft();
         
-        navigator.move();
+        this.rb.move();
         
-        navigator.turnLeft();
+        this.rb.turnLeft();
         
-        navigator.move();
+        this.rb.move();
         
-        navigator.turnLeft();
-        navigator.turnLeft();
-        navigator.turnLeft();
+        this.rb.turnLeft();
+        this.rb.turnLeft();
+        this.rb.turnLeft();
         
-        navigator.move();
-        navigator.move();
+        this.rb.move();
+        this.rb.move();
         
-        navigator.turnLeft();
-        
-
+        this.rb.turnLeft();
     }
 
 }
