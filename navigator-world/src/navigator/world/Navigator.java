@@ -35,39 +35,26 @@ public class Navigator {
 
         // navigator goes around the walls with the following lines of code
 
-        //move the navigator 1 step ahead per move()
-        this.rb.move();
-        this.rb.move();
+        //move the navigator 2 steps
+        this.rb.moveForward(2);
 
         //turn the navigator 90 degree to the south
         this.rb.turnLeft();
 
-        //move the navigator 1 step ahead per move()
-        this.rb.move();
-        this.rb.move();
-        this.rb.move();
+        this.rb.moveForward(3);
 
-        //turn the navigator 90 degree to the east
         this.rb.turnLeft();
 
-        //move the rb 1 step ahead per move()
-        this.rb.move();
-        this.rb.move();
-        this.rb.move();
+        this.rb.moveForward(3);
 
-        //turn the navigator 90 degree to the north
         this.rb.turnLeft();
 
-        //move the navigator 1 step ahead per move()
-        this.rb.move();
-        this.rb.move();
-        this.rb.move();
-
+        this.rb.moveForward(3);
        //turn the navigator 90 degree to the west
         this.rb.turnLeft();
 
         //stop at the starting position per move()
-        this.rb.move();    
+        this.rb.moveForward(1);    
     }
 
 }

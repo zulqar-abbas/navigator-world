@@ -36,7 +36,7 @@ public class Climber extends Thing {
         // navigator goes around the walls with the following lines of code
             
         //move the navigator 1 step ahead per move()
-        this.rb.move();
+        this.rb.moveForward(1);
         
         
         if(this.rb.canPickThing()){
@@ -47,53 +47,43 @@ public class Climber extends Thing {
         this.rb.turnLeft();
 
         //move the navigator 1 step ahead per move()
-        this.rb.move();
+        this.rb.moveForward(1);
 
         //turn the navigator 90 degree to the east
-        this.rb.turnLeft();
-        this.rb.turnLeft();
-        this.rb.turnLeft();
+        this.rb.turnRight();
 
         //move the navigator 1 step ahead per move()
-        this.rb.move();
+        this.rb.moveForward(1);
 
         //turn the navigator 90 degree to the north
         this.rb.turnLeft();
 
-        //move the navigator 1 step ahead per move()
-        this.rb.move();
-        this.rb.move();
+        //move the navigator
+        this.rb.moveForward(2);
 
-       //turn the navigator 90 degree to the west
-        this.rb.turnLeft();
-        this.rb.turnLeft();
-        this.rb.turnLeft();
+       //turn Right the robot
+        this.rb.turnRight();
 
         //stop at the starting position per move()
-        this.rb.move();    
+        this.rb.moveForward(1);    
         
         this.rb.putThing();
         
         //move the navigator 1 step ahead per move()
-        this.rb.move();
+        this.rb.moveForward(1);
         
         //turn the navigator 90 degree to the west
-        this.rb.turnLeft();
-        this.rb.turnLeft();
-        this.rb.turnLeft();
+        this.rb.turnRight();
         
-        this.rb.move();
+        this.rb.moveForward(1);
         
         this.rb.turnLeft();
         
-        this.rb.move();
+        this.rb.moveForward(1);
         
-        this.rb.turnLeft();
-        this.rb.turnLeft();
-        this.rb.turnLeft();
+        this.rb.turnRight();
         
-        this.rb.move();
-        this.rb.move();
+        this.rb.moveForward(2);
         
         this.rb.turnLeft();
     }
